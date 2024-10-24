@@ -1,50 +1,92 @@
-# React + TypeScript + Vite
+# Bloco de notas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto que será desenvolvido para a prática do CRUD.
 
-Currently, two official plugins are available:
+### Tecnologias utilizadas:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React JS
+- TS
+- Vite
 
-## Expanding the ESLint configuration
+### Telas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<div style='display: flex'>
+  <img src='https://github.com/andre06santos/bloco-de-notas/blob/main/public/images/getNotes.JPG?raw=true' style='width: 40%' />
+  <img src='https://github.com/andre06santos/bloco-de-notas/blob/main/public/images/createNote.JPG?raw=true' style='width: 40%' />
+  <img src='https://github.com/andre06santos/bloco-de-notas/blob/main/public/images/editNote.JPG?raw=true' style='width: 40%' />
+  <img src='https://github.com/andre06santos/bloco-de-notas/blob/main/public/images/deleteNote.JPG?raw=true' style='width: 40%' />
+</div>
 
-- Configure the top-level `parserOptions` property like this:
+### Estrutura do projeto
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+app
+│
+└── src
+    │
+    ├── infrastructure
+    │   ├── get-notes.ts
+    │   ├── create-note.ts
+    │   ├── edit-note.ts
+    │   └── delete-note.ts
+    │
+    ├── modules
+    │   └── hooks
+    │       └── use-notes.ts
+    │   └── provider.tsx
+    │
+    ├── pages
+    │   ├── create-page.tsx
+    │   ├── edit-page.tsx
+    │   └── notes-page.tsx
+    │
+    ├── services
+    │   └── api
+    │       └── api-client.ts
+    │
+    └── ui
+        ├── note
+        │   ├── index.tsx
+        │   └── styles.css
+        ├── header.tsx
+        ├── footer.tsx
+        └── layout.tsx
+│
+├── App.tsx
+├── main.tsx
+├── index.html
+└── index.css
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Padrões do projeto
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+#### 1) Como nomear branchs: <br/>
+
+Os verbos devem ficar no tempo infinitivo
+
+<tipo de alteração (em inglês)>/nome-da-branch
+
+Exemplos de branchs: <br />
+
+<ul>
+  <li>feature/adicionar-busca</li>
+  <li>bugfix/corrigir-login</li>
+  <li>docs/atualizar-documentacao</li>
+  <li>refactor/remover-codigo-desnecessario</li>
+  <li>improvement/melhorar-api</li>
+</ul>
+
+#### 2) Como nomear commits: <br/>
+
+Os verbos devem ficar no tempo presente do indicativo
+
+Exemplos de mensagens de commit: <br />
+
+<ul>
+  <li>adiciona nova funcionalidade de busca</li>
+  <li>corrige bug na página de login</li>
+  <li>atualiza documentação do projeto</li>
+  <li>remove código desnecessário</li>
+  <li>melhora desempenho da API</li>
+</ul>
