@@ -1,0 +1,23 @@
+.note{
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.note__title{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.icons{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    gap: 5px;
+}
