@@ -1,6 +1,6 @@
 const EditPage = () => {
   return (
-    <div>edit-page</div>
+    <main>edit-page</main>
   )
 }
 

@@ -1,6 +1,6 @@
 const CreatePage = () => {
   return (
-    <div>create-page</div>
+    <main>create-page</main>
   )
 }
 
