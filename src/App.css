@@ -1,0 +1,8 @@
+.notes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    background-color: whitesmoke;
+    padding: 15px;
+}
+
