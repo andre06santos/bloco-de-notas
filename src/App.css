@@ -1,6 +1,7 @@
 .notes{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     gap: 50px;
     background-color: whitesmoke;
     padding: 15px;
