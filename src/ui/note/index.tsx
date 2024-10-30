@@ -1,10 +1,10 @@
 import './styles.css'
 
-const Note = ({note}:any) => {
+const Note = ({title, text}:any) => {
   return (
     <div className="note">
-        <p className="note__title">{note.title}</p>
-        <p className="note__text">{note.text}</p>
+        <p className="note__title">{title}</p>
+        <p className="note__text">{text}</p>
 
         <div className="icons">
             <i className="fa-regular fa-pen-to-square"></i>
