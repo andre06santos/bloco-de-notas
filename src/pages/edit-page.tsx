@@ -4,12 +4,12 @@ const EditPage = () => {
       <h1>Edite a nota</h1>
 
       <form action="post" className="form">
-        <label htmlFor="title">
+        <label>
           Título
           <input type="text" name="title" id="title" className="form__title" />
         </label>
 
-        <label htmlFor="text">
+        <label>
           Descrição
           <textarea name="text" id="text" className="form__text"></textarea>
         </label>
