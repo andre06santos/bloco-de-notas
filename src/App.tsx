@@ -7,20 +7,16 @@ import { EditPage } from "./pages/edit-page";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<NotesPage />} />
-            <Route path="/create" element={<CreatePage />} />
-            <Route path="/edit" element={<EditPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </>
-
-  )
-  
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<NotesPage />} />
+          <Route path="/create" element={<CreatePage />} />
+          <Route path="/edit" element={<EditPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
