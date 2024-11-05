@@ -7,7 +7,7 @@ const Header = () => {
       <Link to={"/"}>
         <h2 className="header__title">Início</h2>
       </Link>
-      <Link to={"/create"}>
+      <Link to={"/criar"}>
         <button className="header__button">ADICIONAR</button>
       </Link>
     </header>
