@@ -1,0 +1,27 @@
+.container-nota {
+  display: flex;
+  background-color: rgb(238, 238, 238);
+  padding: 8px;
+  font-family: sans-serif;
+  width: 40%;
+  border-radius: 10px;
+}
+.dados-nota {
+  width: 60%;
+}
+.dados-nota h2,
+p {
+  margin: 0;
+}
+
+.dados-nota h2 {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.container-botoes {
+  width: 40%;
+  display: flex;
+  width: fit-content;
+  padding: 3px;
+}
