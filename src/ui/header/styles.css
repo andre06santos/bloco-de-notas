@@ -1,0 +1,22 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: lightgray;
+}
+
+.header__title{
+    color: gray;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.header__button{
+    background-color: rgb(0, 153, 255);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    cursor: pointer;
+}
