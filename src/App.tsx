@@ -11,8 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<NotesPage />} />
-          <Route path="/create" element={<CreatePage />} />
-          <Route path="/edit" element={<EditPage />} />
+          <Route path="/criar" element={<CreatePage />} />
+          <Route path="/editar" element={<EditPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
