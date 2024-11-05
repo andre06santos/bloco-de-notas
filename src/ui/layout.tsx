@@ -4,12 +4,14 @@ import { Footer } from "./footer"
 
 const Layout = () => {
   return (
-    <div>
+    <>
       <Header />
-      <Outlet />
+      <div className="rota_principal">
+        <Outlet />
+      </div>
       <Footer />
-    </div>
+    </>
   )
 }
 
-export {Layout}
+export { Layout }
