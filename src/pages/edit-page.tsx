@@ -1,5 +1,7 @@
 // PascalCase para componentes;
 
+import { Link } from "react-router-dom";
+
 const EditPage = () => {
   return (
     <>
@@ -11,8 +13,13 @@ const EditPage = () => {
         <label htmlFor="descricao">Descrição</label>
         <input type="text" />
 
-        <input type="button" value="CANCELAR" />
-        <input type="submit" value="SALVAR" />
+        <Link to={"/"}>
+          <input type="button" value="CANCELAR" />
+        </Link>
+
+        <Link to={"/"}>
+          <input type="submit" value="CRIAR" />
+        </Link>
       </form>
     </>
   );
