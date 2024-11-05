@@ -1,0 +1,52 @@
+.notes-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+.modal {
+  background-color: white;
+  box-shadow: 1px 1px 5px gray;
+  width: 400px;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 30px;
+  border-radius: 15px;
+}
+
+.modal__text {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal__buttons{
+    display: flex;
+    justify-content: space-around;
+
+    & button{
+        border: none;
+        padding: 8px 15px;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    & .modal__buttons__cancelar{
+        background-color: lightgray;
+    }
+    
+    & .modal__buttons__excluir{
+        background-color: red;
+
+    }
+}
+
