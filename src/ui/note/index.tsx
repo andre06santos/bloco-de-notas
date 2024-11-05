@@ -1,4 +1,7 @@
 import "./styles.css";
+import { Link } from "react-router-dom";
+import editarIcon from "./icons/editar.png";
+import excluirIcon from "./icons/excluir.png";
 
 const Note = () => {
   return (
@@ -9,9 +12,9 @@ const Note = () => {
       </div>
 
       <div className="container-botoes">
-        <div>
-          <button>Editar</button>
-          <button>Excluir</button>
+        <div>s
+          <Link to='/edit'><button><img src={editarIcon} /></button></Link>
+          <button><img src={excluirIcon} /></button>
         </div>
       </div>
     </div>

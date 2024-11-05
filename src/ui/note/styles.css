@@ -3,12 +3,14 @@
   background-color: rgb(238, 238, 238);
   padding: 8px;
   font-family: sans-serif;
-  width: 40%;
+  width: 30%;
   border-radius: 10px;
 }
+
 .dados-nota {
   width: 60%;
 }
+
 .dados-nota h2,
 p {
   margin: 0;
@@ -21,7 +23,19 @@ p {
 
 .container-botoes {
   width: 40%;
-  display: flex;
-  width: fit-content;
   padding: 3px;
+}
+
+.container-botoes div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container-botoes button {
+  border: none;
+  margin-left: 10px;
+}
+
+.container-botoes img {
+  height: 30px;
 }
