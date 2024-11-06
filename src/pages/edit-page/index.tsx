@@ -11,7 +11,7 @@ const EditPage = () => {
         <label htmlFor="descricao">Descrição</label>
         <textarea name="descricao" id="descricao" maxLength={100}></textarea>
         <input type="button" value="CANCELAR" />
-        <input type="submit" value="CRIAR" />
+        <input type="submit" value="SALVAR" />
       </form>
     </div>
   );
