@@ -41,9 +41,9 @@ p {
 
 .container-botoes img {
   height: 30px;
+  cursor: pointer;
 }
 
-.container-botoes img:hover {
-  height: 32px;
-  cursor: pointer;
+.container-botoes button:hover {
+  transform: translateY(-2px);
 }

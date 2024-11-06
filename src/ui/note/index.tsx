@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 import { useState } from "react";
 import { Modal } from "../modal";
+import editIcons from "/icons/editar.png"
+import deleteIcons from "/icons/excluir.png"
+
 
 const Note = () => {
   const [showModal, setShowModal] = useState(false);
@@ -23,11 +26,11 @@ const Note = () => {
         <div className="container-botoes">
           <div>
             <Link to="/editar">
-              <button>Editar</button>
+              <button><img src={editIcons} /></button>
             </Link>
 
             <Link to="/">
-              <button onClick={handleDelete}>Excluir</button>
+              <button onClick={handleDelete}><img src={deleteIcons} /></button>
             </Link>
           </div>
         </div>
