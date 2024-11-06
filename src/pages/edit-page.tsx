@@ -13,11 +13,11 @@ const EditPage = () => {
         <label htmlFor="descricao">Descrição</label>
         <input type="text" />
 
-        <Link to={"/"}>
+        <Link to="/">
           <input type="button" value="CANCELAR" />
         </Link>
 
-        <Link to={"/"}>
+        <Link to="/">
           <input type="submit" value="CRIAR" />
         </Link>
       </form>

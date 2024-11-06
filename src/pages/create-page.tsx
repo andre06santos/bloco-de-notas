@@ -12,11 +12,11 @@ const CreatePage = () => {
         <label htmlFor="descricao">Descrição</label>
         <input type="text" id="descricao" />
 
-        <Link to={"/"}>
+        <Link to="/">
           <input type="button" value="CANCELAR" />
         </Link>
 
-        <Link to={"/"}>
+        <Link to="/">
           <input type="submit" value="CRIAR" />
         </Link>
       </form>

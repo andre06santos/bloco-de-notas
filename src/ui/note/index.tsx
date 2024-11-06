@@ -22,11 +22,11 @@ const Note = () => {
 
         <div className="container-botoes">
           <div>
-            <Link to={"/editar"}>
+            <Link to="/editar">
               <button>Editar</button>
             </Link>
 
-            <Link to={"/"}>
+            <Link to="/">
               <button onClick={handleDelete}>Excluir</button>
             </Link>
           </div>
