@@ -1,14 +1,14 @@
 .container-nota {
   display: flex;
   background-color: rgb(238, 238, 238);
-  padding: 8px;
+  width: 300px;
   font-family: sans-serif;
-  width: 30%;
   border-radius: 10px;
 }
 
 .dados-nota {
-  width: 60%;
+  width: 70%;
+  padding: 5px;
 }
 
 .dados-nota h2,
@@ -22,7 +22,10 @@ p {
 }
 
 .container-botoes {
-  width: 40%;
+  width: 30%;
+  margin-left: 15px;
+  display: flex;
+  width: fit-content;
   padding: 3px;
 }
 
@@ -38,4 +41,9 @@ p {
 
 .container-botoes img {
   height: 30px;
+}
+
+.container-botoes img:hover {
+  height: 32px;
+  cursor: pointer;
 }
