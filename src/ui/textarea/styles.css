@@ -1,0 +1,32 @@
+.textarea_component{
+    /* display: flex;
+    flex-direction: column; */
+    width: 400px;
+    display: flex;
+    gap: 10px;
+}
+
+.textarea_not_inline{
+    flex-direction: column;
+}
+
+.textarea__label{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.textarea_component textarea {
+    outline: none;
+    border: 1px solid lightgray;
+    padding: 4px 5px;
+    border-radius: 5px;
+    resize: none;
+    width: 100%;
+    height: 100px;
+
+    &:focus{
+        box-shadow: 0 0 2px 2px  lightblue;
+        transition: .3s;
+        /* border: 1px solid lightblue; */
+    }
+}
