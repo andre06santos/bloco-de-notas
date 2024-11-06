@@ -4,9 +4,12 @@ Projeto que será desenvolvido para a prática do CRUD.
 
 ### Tecnologias utilizadas:
 
-- React JS
-- TS
+- React
+- TypeScript
 - Vite
+- Prettier
+- React Router
+- CSS
 
 ### Telas
 
