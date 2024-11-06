@@ -1,26 +1,27 @@
 import { Link } from "react-router-dom";
+import Input from "../../ui/input";
+import { Textarea } from "../../ui/textarea";
 import "./styles.css";
+import { Button } from "../../ui/button";
+
 
 const EditPage = () => {
   return (
     <div className="container-notas">
       <h1 className="titulo-pagina">Editar a nota</h1>
-      <form>
-        <label htmlFor="titulo">Título</label>
-        <input type="text" id="titulo" />
 
-        <label htmlFor="descricao">Descrição</label>
-        <textarea name="descricao" id="descricao" maxLength={100}></textarea>
+      <form action="">
+        <Input labelText={"Título"} />
+        <Textarea labelText={"Descrição"} />
 
         <Link to="/">
-          <input type="button" value="CANCELAR" />
+          <Button typeButtom={"button"} text={"CANCELAR"} />
         </Link>
-
+        <Button typeButtom={"submit"} text={"SALVAR"} />
         <Link to="/">
-          <input type="submit" value="SALVAR" />
         </Link>
-
       </form>
+
     </div>
   );
 };
