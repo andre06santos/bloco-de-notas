@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 const EditPage = () => {
@@ -10,8 +11,15 @@ const EditPage = () => {
 
         <label htmlFor="descricao">Descrição</label>
         <textarea name="descricao" id="descricao" maxLength={100}></textarea>
-        <input type="button" value="CANCELAR" />
-        <input type="submit" value="SALVAR" />
+
+        <Link to="/">
+          <input type="button" value="CANCELAR" />
+        </Link>
+
+        <Link to="/">
+          <input type="submit" value="SALVAR" />
+        </Link>
+
       </form>
     </div>
   );
