@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Input from "../ui/input";
+import { Textarea } from "../ui/textarea";
 
 const CreatePage = () => {
   return (
@@ -6,11 +8,8 @@ const CreatePage = () => {
       <h1>Crie uma nota</h1>
 
       <form>
-        <label htmlFor="titulo">Título</label>
-        <input type="text" id="titulo" />
-
-        <label htmlFor="descricao">Descrição</label>
-        <input type="text" id="descricao" />
+        <Input labelText={"Título"}/>
+        <Textarea labelText={"Descrição"}/>
 
         <Link to="/">
           <input type="button" value="CANCELAR" />

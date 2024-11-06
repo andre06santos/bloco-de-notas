@@ -1,17 +1,16 @@
 // PascalCase para componentes;
 
 import { Link } from "react-router-dom";
+import Input from "../ui/input";
+import { Textarea } from "../ui/textarea";
 
 const EditPage = () => {
   return (
     <>
       <h1>Edite a nota</h1>
       <form action="">
-        <label htmlFor="titulo">Titulo</label>
-        <input type="text" id="titulo" />
-
-        <label htmlFor="descricao">Descrição</label>
-        <input type="text" />
+        <Input labelText={"Título"}/>
+        <Textarea labelText={"Descrição"}/>
 
         <Link to="/">
           <input type="button" value="CANCELAR" />
