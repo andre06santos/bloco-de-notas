@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const CreatePage = () => {
   return (
     <>
@@ -10,8 +12,13 @@ const CreatePage = () => {
         <label htmlFor="descricao">Descrição</label>
         <input type="text" id="descricao" />
 
-        <input type="button" value="CANCELAR" />
-        <input type="submit" value="CRIAR" />
+        <Link to="/">
+          <input type="button" value="CANCELAR" />
+        </Link>
+
+        <Link to="/">
+          <input type="submit" value="CRIAR" />
+        </Link>
       </form>
     </>
   );
