@@ -33,23 +33,7 @@ textarea {
   height: 80px;
 }
 
-input[type="button"],
-input[type="submit"] {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
+button[type="button"],
+button[type="submit"] {
   margin-right: 10px;
-}
-
-input[type="button"] {
-  background-color: #6c757d;
-  color: #fff;
-}
-
-
-input[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
 }

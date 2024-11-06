@@ -1,5 +1,8 @@
-import "./styles.css";
 import { Link } from "react-router-dom";
+import Input from "../../ui/input";
+import { Textarea } from "../../ui/textarea";
+import "./styles.css";
+import { Button } from "../../ui/button";
 
 const CreatePage = () => {
   return (
@@ -7,20 +10,16 @@ const CreatePage = () => {
       <h1 className="titulo-pagina">Crie uma nota</h1>
 
       <form>
-        <label htmlFor="titulo">Título</label>
-        <input type="text" id="titulo" />
-
-        <label htmlFor="descricao">Descrição</label>
-        <textarea name="descricao" id="descricao" maxLength={100}></textarea>
+        <Input labelText={"Título"} />
+        <Textarea labelText={"Descrição"} />
 
         <Link to="/">
-          <input type="button" value="CANCELAR" />
+          <Button typeButtom={"button"} text={"CANCELAR"} />
         </Link>
 
         <Link to="/">
-          <input type="submit" value="CRIAR" />
+          <Button typeButtom={"submit"} text={"CRIAR"} />
         </Link>
-
       </form>
     </div>
   );
