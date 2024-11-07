@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import {Input} from "../../ui/input";
+import { Input } from "../../ui/input";
 import { Textarea } from "../../ui/textarea";
 import "./styles.css";
 import { Button } from "../../ui/button";
-
 
 const EditPage = () => {
   return (
@@ -15,13 +14,11 @@ const EditPage = () => {
         <Textarea labelText="Descrição" />
 
         <Link to="/">
-          <Button typeButtom={"button"} text={"CANCELAR"} />
+          <Button type={"button"} label={"CANCELAR"} />
         </Link>
-        <Button typeButtom={"submit"} text={"SALVAR"} />
-        <Link to="/">
-        </Link>
+        <Button type={"submit"} label={"SALVAR"} />
+        <Link to="/"></Link>
       </form>
-
     </div>
   );
 };
