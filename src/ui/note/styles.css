@@ -45,5 +45,5 @@ p {
 }
 
 .container-botoes button:hover {
-  transform: translateY(-2px);
+  transform: scale(1.1);
 }
