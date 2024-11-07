@@ -1,9 +1,9 @@
 import "./styles.css"
 
-const Textarea = ({labelText, inline }: any) => {
+const Textarea = ({label }: any) => {
   return (
-    <div className={`textarea_component ${!inline && "textarea_not_inline"}`}>
-      {labelText && <label className="textarea__label">{labelText}</label>}
+    <div className={`textarea_component`}>
+      {label && <label className="textarea__label">{label}</label>}
       <textarea></textarea>
     </div>
   )
