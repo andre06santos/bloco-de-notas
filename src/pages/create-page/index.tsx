@@ -5,6 +5,13 @@ import "./styles.css";
 import { Button } from "../../ui/button";
 
 const CreatePage = () => {
+  // const { createNote } = useNotes();
+
+  //   try {
+  //     const response = await createNote();
+  //   } catch (e) {}
+  // };
+
   return (
     <div className="container-notas">
       <h1 className="titulo-pagina">Crie uma nota</h1>
