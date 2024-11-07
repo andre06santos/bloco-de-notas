@@ -1,9 +1,11 @@
-import "./style.css"
+import "./style.css";
 
-const Button = ({ text, classButton, typeButtom, onClick }: any) => {
-    return (<button type={typeButtom} className="button" onClick={onClick}>
-        {text}
-    </button>)
+const Button = ({ label, type, onClick }: any) => {
+  return (
+    <button type={type} className="button" onClick={onClick}>
+      {label}
+    </button>
+  );
 };
 
 export { Button };
