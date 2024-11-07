@@ -12,6 +12,10 @@
   text-align: left;
 }
 
+.form{
+  width: 400px;
+}
+
 label {
   display: block;
   font-weight: bold;
