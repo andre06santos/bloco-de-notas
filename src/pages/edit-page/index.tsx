@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Input from "../../ui/input";
+import {Input} from "../../ui/input";
 import { Textarea } from "../../ui/textarea";
 import "./styles.css";
 import { Button } from "../../ui/button";
@@ -11,8 +11,8 @@ const EditPage = () => {
       <h1 className="titulo-pagina">Editar a nota</h1>
 
       <form action="">
-        <Input labelText={"Título"} />
-        <Textarea labelText={"Descrição"} />
+        <Input labelText="Título" />
+        <Textarea labelText="Descrição" />
 
         <Link to="/">
           <Button typeButtom={"button"} text={"CANCELAR"} />

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Input from "../../ui/input";
+import {Input} from "../../ui/input";
 import { Textarea } from "../../ui/textarea";
 import "./styles.css";
 import { Button } from "../../ui/button";
@@ -9,9 +9,9 @@ const CreatePage = () => {
     <div className="container-notas">
       <h1 className="titulo-pagina">Crie uma nota</h1>
 
-      <form>
-        <Input labelText={"Título"} />
-        <Textarea labelText={"Descrição"} />
+      <form className="form">
+        <Input labelText="Título" />
+        <Textarea labelText="Descrição" />
 
         <Link to="/">
           <Button typeButtom={"button"} text={"CANCELAR"} />
