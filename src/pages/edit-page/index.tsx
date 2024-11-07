@@ -10,8 +10,8 @@ const EditPage = () => {
       <h1 className="titulo-pagina">Editar a nota</h1>
 
       <form action="">
-        <Input labelText="Título" />
-        <Textarea labelText="Descrição" />
+        <Input label="Título" />
+        <Textarea label="Descrição" />
 
         <Link to="/">
           <Button type={"button"} label={"CANCELAR"} />

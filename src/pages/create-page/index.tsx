@@ -10,8 +10,8 @@ const CreatePage = () => {
       <h1 className="titulo-pagina">Crie uma nota</h1>
 
       <form className="form">
-        <Input labelText="Título" />
-        <Textarea labelText="Descrição" />
+        <Input label="Título" />
+        <Textarea label="Descrição" />
 
         <Link to="/">
           <Button type={"button"} label={"CANCELAR"} />
