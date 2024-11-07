@@ -3,7 +3,7 @@ import { Note } from "../../ui/note";
 
 const NotesPage = () => {
   return (
-    <div className="container-notas">
+    <div className="container-notes-page">
       <Note />
     </div>
   );
