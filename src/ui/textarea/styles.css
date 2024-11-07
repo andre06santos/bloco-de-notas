@@ -1,14 +1,10 @@
 .textarea_component{
     display: flex;
-    gap: 10px;
-}
-
-.textarea_not_inline{
     flex-direction: column;
 }
 
 .textarea__label{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
 }
 

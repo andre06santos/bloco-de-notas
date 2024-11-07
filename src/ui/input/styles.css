@@ -1,14 +1,10 @@
 .input_component{
     display: flex;
-    gap: 10px;
-}
-
-.input_not_inline{
     flex-direction: column;
 }
 
 .input__label{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
 }
 
