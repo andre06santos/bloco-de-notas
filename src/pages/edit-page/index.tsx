@@ -16,8 +16,9 @@ const EditPage = () => {
         <Link to="/">
           <Button type={"button"} label={"CANCELAR"} />
         </Link>
-        <Button type={"submit"} label={"SALVAR"} />
-        <Link to="/"></Link>
+        <Link to="/">
+          <Button type={"submit"} label={"SALVAR"} />
+        </Link>
       </form>
     </div>
   );
