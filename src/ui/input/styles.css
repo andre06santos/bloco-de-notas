@@ -1,7 +1,4 @@
 .input_component{
-    /* display: flex;
-    flex-direction: column; */
-    width: 400px;
     display: flex;
     gap: 10px;
 }
@@ -24,6 +21,5 @@
     &:focus{
         box-shadow: 0 0 2px 2px  lightblue;
         transition: .3s;
-        /* border: 1px solid lightblue; */
     }
 }
