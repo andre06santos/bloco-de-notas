@@ -13,9 +13,10 @@
     border: 1px solid lightgray;
     padding: 4px 5px;
     border-radius: 5px;
-    max-width: 100%;
+    width: 100%;
     min-height: 115px;
     max-height: 400px;
+    box-sizing: border-box;
 
     &:focus {
         box-shadow: 0 0 2px 2px lightblue;
