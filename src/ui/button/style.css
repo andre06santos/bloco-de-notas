@@ -10,7 +10,15 @@
 }
 
 .button:hover {
-  transform: scale(1.1);
+  transform: scale(1.01);
+}
+
+.button[type="button"]:hover {
+  background-color: #95a2ad;
+}
+
+.button[type="submit"]:hover {
+  background-color: #3a99ff;
 }
 
 .button[type="button"] {
