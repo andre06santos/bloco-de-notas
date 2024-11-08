@@ -1,21 +1,21 @@
-.input_component{
-    display: flex;
-    flex-direction: column;
+.input_component {
+  display: flex;
+  flex-direction: column;
 }
 
-.input__label{
-    font-size: 1.3rem;
-    font-weight: bold;
+.input__label {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .input_component input {
-    outline: none;
-    border: 1px solid lightgray;
-    padding: 4px 5px;
-    border-radius: 5px;
+  outline: none;
+  border: 1px solid lightgray;
+  padding: 4px 5px;
+  border-radius: 5px;
 
-    &:focus{
-        box-shadow: 0 0 2px 2px  lightblue;
-        transition: .3s;
-    }
+  &:focus {
+    box-shadow: 0 0 2px 2px lightblue;
+    transition: 0.3s;
+  }
 }

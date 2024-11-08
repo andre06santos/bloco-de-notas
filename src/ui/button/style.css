@@ -8,6 +8,19 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
   width: auto;
 }
+
+.button:hover {
+  transform: scale(1.01);
+}
+
+.button[type="button"]:hover {
+  background-color: #95a2ad;
+}
+
+.button[type="submit"]:hover {
+  background-color: #3a99ff;
+}
+
 .button[type="button"] {
   background-color: #6c757d;
   color: #fff;
