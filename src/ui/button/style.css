@@ -30,3 +30,15 @@
   background-color: #007bff;
   color: #fff;
 }
+
+.button:hover {
+  transform: scale(1.01);
+}
+
+.button[type="button"]:hover {
+  background-color: #8e9093;
+}
+
+.button[type="submit"]:hover {
+  background-color: #2e93ff;
+}
