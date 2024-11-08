@@ -1,39 +1,40 @@
 .container-notas {
-    font-family: sans-serif;
-    max-width: 400px;
-    padding: 20px;
+  font-family: sans-serif;
+  max-width: 400px;
+  padding: 20px;
 }
 
 .titulo-pagina {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: left;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
 }
 
 input[type="text"],
 textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
+  min-width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
 textarea {
-    height: 80px;
+  height: 80px;
 }
 
 button[type="button"],
 button[type="submit"] {
-    margin-right: 10px;
+  margin-right: 10px;
 }

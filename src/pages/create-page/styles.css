@@ -12,7 +12,7 @@
   text-align: left;
 }
 
-.form{
+.form {
   width: 400px;
 }
 
@@ -25,7 +25,8 @@ label {
 
 input[type="text"],
 textarea {
-  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
