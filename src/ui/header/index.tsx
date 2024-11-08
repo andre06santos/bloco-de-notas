@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Button } from "../button";
 import "./styles.css";
 
 const Header = () => {
@@ -8,7 +9,7 @@ const Header = () => {
         <h2 className="header__title">Início</h2>
       </Link>
       <Link to="/criar">
-        <button className="header__button">ADICIONAR</button>
+        <Button id="header__button" type={"submit"} label={"ADICIONAR"} />
       </Link>
     </header>
   );
