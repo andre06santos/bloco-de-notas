@@ -1,8 +1,29 @@
+import React from "react";
 import "./style.css";
 
-const Button = ({ label, type, onClick, id }: any) => {
+interface ButtonProps {
+  label?: string;
+  type?: "button" | "submit" | "reset";
+  typeButton: "delete" | "add" | "cancel";
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+const Button: React.FC<ButtonProps> = ({
+  label,
+  type = "button",
+  typeButton,
+  onClick,
+}: ButtonProps) => {
+  const classButton: Record<"delete" | "add" | "cancel", string> = {
+    delete: "button-delete",
+    add: "button-add",
+    cancel: "button-cancel",
+  };
+
+  const buttonClass = classButton[typeButton];
+
   return (
-    <button id={id} type={type} className="button" onClick={onClick}>
+    <button type={type} className={`${buttonClass} button`} onClick={onClick}>
       {label}
     </button>
   );

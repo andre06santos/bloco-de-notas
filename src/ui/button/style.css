@@ -6,39 +6,32 @@
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  width: auto;
+  width: 100%;
+  color: #fff;
 }
 
 .button:hover {
   transform: scale(1.01);
 }
 
-.button[type="button"]:hover {
-  background-color: #95a2ad;
-}
-
-.button[type="submit"]:hover {
-  background-color: #3a99ff;
-}
-
-.button[type="button"] {
+.button-cancel {
   background-color: #6c757d;
-  color: #fff;
 }
 
-.button[type="submit"] {
+.button-add {
   background-color: #007bff;
-  color: #fff;
 }
 
-.button:hover {
-  transform: scale(1.01);
+.button-delete {
+  background-color: #ff0000;
 }
 
-.button[type="button"]:hover {
-  background-color: #8e9093;
+.button-cancel:hover {
+  background-color: #879199;
 }
-
-.button[type="submit"]:hover {
-  background-color: #2e93ff;
+.button-add:hover {
+  background-color: #278fff;
+}
+.button-delete:hover {
+  background-color: #ff4d4d;
 }
