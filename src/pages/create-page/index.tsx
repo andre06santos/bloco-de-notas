@@ -10,7 +10,7 @@ const CreatePage = () => {
       <h1 className="titulo-pagina">Crie uma nota</h1>
 
       <form className="form">
-        <Input label="Título" typeInput="text" />
+        <Input label="Título" type="text" />
         <Textarea label="Descrição" />
 
         <div className="container-function-page ">
@@ -21,7 +21,7 @@ const CreatePage = () => {
           </div>
           <div className="container-button-create">
             <Link to="/">
-              <Input typeInput="submit" value="CRIAR" />
+              <Input type="submit" value="CRIAR" />
             </Link>
           </div>
         </div>
