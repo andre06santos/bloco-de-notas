@@ -1,10 +1,12 @@
-// const axiosInstance = axios.create({
-//   baseURL: "",
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-// });
+import axios from "axios";
 
-// const httpClient = ({ endpoint, config }: any) => {
-//   return axiosInstance(endpoint, config);
-// };
+const axiosInstance = axios.create({
+  baseURL: "http://localhost:3000/notas",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+export const httpClient = ({ endpoint, config }: any) => {
+  return axiosInstance(endpoint, config);
+};
