@@ -1,17 +1,23 @@
-// export const NotesContext = createContext<any>(undefined);
+import { createContext, useState, useCallback, useMemo } from "react";
+import { createNote as infraCreateNote } from "../infrastructure/create-note";
 
-// export const NotesProvider = ({ children }: any) => {
-//   const [notes, setNotes] = useState<any>([]);
+export const NotesContext = createContext<any>(undefined);
 
-//   const createNote = useCallback(async (note: any) => {
-//     try {
-//       const response = await infraCreateNote(note);
-//     } catch (e) {}
-//   }, []);
+export const NotesProvider = ({ children }: any) => {
+  const [notes, setNotes] = useState<any>([]);
 
-//   const value = useMemo(() => ({ notes, createNote }), [notes]);
+  const createNote = useCallback(async (note: any) => {
+    try {
+      const response = await infraCreateNote(note);
+      setNotes([...notes, response])
+    } catch (e) {
+    }
+  }, []);
+  
 
-//   return (
-//     <NotesContext.Provider value={value}>{children}</NotesContext.Provider>
-//   );
-// };
+  const value = useMemo(() => ({ notes, createNote }), [notes]);
+
+  return (
+    <NotesContext.Provider value={value}>{children}</NotesContext.Provider>
+  );
+};
