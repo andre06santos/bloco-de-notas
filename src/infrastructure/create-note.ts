@@ -1,13 +1,15 @@
-// const createNote = async (data: any) => {
-//   try {
-//     const response = await httpClient({
-//       endpoint: "/",
-//       config: {
-//         method: "POST",
-//         data,
-//       },
-//     });
+import { httpClient } from "../services/api/api-client";
 
-//     return response.data;
-//   } catch (e) {}
-// };
+export const createNote = async (data: any) => {
+  try {
+    const response = await httpClient({
+      endpoint: "/",
+      config: {
+        method: "POST",
+        data: data,
+      },
+    });
+
+    return response.data;
+  } catch (e) {}
+};
