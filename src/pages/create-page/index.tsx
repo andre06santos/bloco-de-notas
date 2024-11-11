@@ -24,16 +24,21 @@ const CreatePage = () => {
       <h1 className="titulo-pagina">Crie uma nota</h1>
 
       <form className="form">
-        <Input label="Título" value={titulo} setValue={setTitulo}/>
+        <Input label="Título" type="text" value={titulo} setValue={setTitulo}/>
         <Textarea label="Descrição" value={descricao} setValue={setDescricao}/>
 
-        <Link to="/">
-          <Button type={"button"} label={"CANCELAR"} />
-        </Link>
-
-        <Link to="/">
-          <Button type={"submit"} label={"CRIAR"} onClick={handleSubmit}/>
-        </Link>
+        <div className="container-function-page ">
+          <div className="container-button-cancel">
+            <Link to="/">
+              <Button type="button" typeButton="cancel" label={"CANCELAR"} />
+            </Link>
+          </div>
+          <div className="container-button-create">
+            <Link to="/">
+              <Input type="submit" value="CRIAR" onClick={handleSubmit}/>
+            </Link>
+          </div>
+        </div>
       </form>
     </div>
   );
