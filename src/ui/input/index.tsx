@@ -1,23 +1,17 @@
 import "./styles.css";
 
-interface InputProps {
-  label?: string;
-  typeInput: "text" | "submit";
-  value?: string;
-}
-
-const Input: React.FC<InputProps> = ({ label, typeInput, value }) => {
-  const classInput: Record<"text" | "submit", string> = {
+const Input = ({ label, type, value }: any) => {
+  const inputClasses: any = {
     text: "input-text",
     submit: "input-submit",
   };
 
-  const inputClass = classInput[typeInput];
+  const className = inputClasses[type];
 
   return (
     <div className="input_component">
       {label && <label className="input__label">{label}</label>}
-      <input type={typeInput} value={value} className={inputClass} />
+      <input type={type} value={value} className={className} />
     </div>
   );
 };
