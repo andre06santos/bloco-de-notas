@@ -8,7 +8,7 @@
   font-weight: bold;
 }
 
-.input_component input {
+.input-text {
   outline: none;
   border: 1px solid lightgray;
   padding: 4px 5px;
@@ -18,4 +18,19 @@
     box-shadow: 0 0 2px 2px lightblue;
     transition: 0.3s;
   }
+}
+.input-submit {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.input-submit:hover {
+  transform: scale(1.01);
+  background-color: #2e93ff;
 }

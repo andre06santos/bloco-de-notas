@@ -43,9 +43,9 @@
 .modal__buttons {
   display: flex;
   justify-content: space-around;
-
   & button {
     border: none;
+    width: 40%;
     padding: 8px 15px;
     border-radius: 10px;
     color: white;

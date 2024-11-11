@@ -10,15 +10,21 @@ const EditPage = () => {
       <h1 className="titulo-pagina">Editar a nota</h1>
 
       <form action="">
-        <Input label="Título" />
+        <Input label="Título" type="text" />
         <Textarea label="Descrição" />
 
-        <Link to="/">
-          <Button type={"button"} label={"CANCELAR"} />
-        </Link>
-        <Link to="/">
-          <Button type={"submit"} label={"SALVAR"} />
-        </Link>
+        <div className="container-function-page ">
+          <div className="container-button-cancel">
+            <Link to="/">
+              <Button typeButton="cancel" label="CANCELAR" />
+            </Link>
+          </div>
+          <div className="container-button-save">
+            <Link to="/">
+              <Input type="submit" value="SALVAR" />
+            </Link>
+          </div>
+        </div>
       </form>
     </div>
   );

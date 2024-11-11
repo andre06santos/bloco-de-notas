@@ -1,9 +1,20 @@
 .container-notas {
   font-family: sans-serif;
   max-width: 400px;
+  box-sizing: content-box;
   padding: 20px;
 }
+.container-function-page {
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+}
 
+.container-button-cancel,
+.container-button-save {
+  width: 50%;
+}
 .titulo-pagina {
   font-size: 32px;
   font-weight: bold;
@@ -34,7 +45,7 @@ textarea {
   height: 80px;
 }
 
-button[type="button"],
-button[type="submit"] {
-  margin-right: 10px;
+input[type="submit"] {
+  border: none;
+  background-color: #007bff;
 }

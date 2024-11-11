@@ -1,6 +1,7 @@
 .container-notas {
   font-family: sans-serif;
   max-width: 400px;
+  box-sizing: content-box;
   padding: 20px;
 }
 
@@ -10,6 +11,17 @@
   color: #333;
   margin-bottom: 20px;
   text-align: left;
+}
+.container-function-page {
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+}
+
+.container-button-cancel,
+.container-button-create {
+  width: 50%;
 }
 
 .form {
@@ -33,12 +45,11 @@ textarea {
   border-radius: 5px;
   font-size: 14px;
 }
+input[type="submit"] {
+  border: none;
+  background-color: #007bff;
+}
 
 textarea {
   height: 80px;
-}
-
-button[type="button"],
-button[type="submit"] {
-  margin-right: 10px;
 }
