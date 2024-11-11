@@ -14,6 +14,7 @@ const CreatePage = () => {
 
   const handleSubmit = async () => {
     const note = {titulo, descricao}
+    
       try {
         const response = await createNote(note);
       } catch (e) {}
