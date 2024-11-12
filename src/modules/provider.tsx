@@ -17,8 +17,8 @@ export const NotesProvider = ({ children }: any) => {
 
       return response;
       
-    } catch (e:any) {
-      console.log(e.message);
+    } catch (error:any) {
+      throw new Error(error.message);
       
     }
   }, []);
