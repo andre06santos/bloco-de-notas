@@ -1,6 +1,6 @@
 import "./styles.css";
 
-const Input = ({ label, type, value, setValue, onClick}: any) => {
+const Input = ({ label, type , ...rest}: any) => {
   const inputClasses: any = {
     text: "input-text",
     submit: "input-submit",
@@ -11,7 +11,7 @@ const Input = ({ label, type, value, setValue, onClick}: any) => {
   return (
     <div className="input_component">
       {label && <label className="input__label">{label}</label>}
-      <input type={type} value={value} className={className} onChange={(e) => setValue(e.target.value)} onSubmit={onClick}/>
+      <input type={type} className={className} {...rest}/>
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import "./styles.css"
 
-const Textarea = ({label, value, setValue }: any) => {
+const Textarea = ({label, ...rest }: any) => {
   return (
     <div className={`textarea_component`}>
       {label && <label className="textarea__label">{label}</label>}
-      <textarea value={value} onChange={(e) => setValue(e.target.value)}></textarea>
+      <textarea {...rest}></textarea>
     </div>
   )
 }
