@@ -9,8 +9,16 @@ export const NotesProvider = ({ children }: any) => {
   const createNote = useCallback(async (note: any) => {
     try {
       const response = await infraCreateNote(note);
-      setNotes([...notes, response])
+
+      if (!response){
+        throw new Error("An error ocurred while trying to create the note")
+      }
+      setNotes((oldNotes:any) => [...oldNotes, response])
+
+      return response;
+      
     } catch (e) {
+      throw new Error("An error ocurred while trying to create the note")
     }
   }, []);
   
