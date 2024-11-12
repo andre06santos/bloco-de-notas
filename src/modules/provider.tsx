@@ -1,22 +1,29 @@
-// export const NotesContext = createContext<any>(undefined);
+import { createContext, useState, useCallback, useMemo } from "react";
+import { createNote as infraCreateNote } from "../infrastructure/create-note";
 
-// export const NotesProvider = ({ children }: any) => {
-//   const [notes, setNotes] = useState<any>([]);
+export const NotesContext = createContext<any>(undefined);
 
-//   const getNotes = useCallback(async () => {
-//     try {
-//       const data = await infraGetNotes();
+export const NotesProvider = ({ children }: any) => {
+  const [notes, setNotes] = useState<any>([]);
 
-//       if (!data)
-//         throw new Error("An error occurred while trying to fetch the notes");
+  const createNote = useCallback(async (note: any) => {
+    try {
+      const response = await infraCreateNote(note);
 
-//       setNotes(data);
-//     } catch (e) {}
-//   }, []);
+      if (!response) {
+        throw new Error("An error ocurred while trying to create the note");
+      }
+      setNotes((oldNotes: any) => [...oldNotes, response]);
 
-//   const value = useMemo(() => ({ notes, getNotes }), [notes]);
+      return response;
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
+  }, []);
 
-//   return (
-//     <NotesContext.Provider value={value}>{children}</NotesContext.Provider>
-//   );
-// };
+  const value = useMemo(() => ({ notes, createNote }), [notes]);
+
+  return (
+    <NotesContext.Provider value={value}>{children}</NotesContext.Provider>
+  );
+};

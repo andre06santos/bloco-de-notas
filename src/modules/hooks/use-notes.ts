@@ -1,9 +1,12 @@
-// export const useNotes = () => {
-//   const value = useContext(NotesContext);
+import { useContext } from "react";
+import { NotesContext } from "../provider";
 
-//   if (!value) {
-//     throw new Error("You must wrap your component with NotesProvider");
-//   }
+export const useNotes = () => {
+  const value = useContext(NotesContext);
 
-//   return value;
-// };
+  if (!value) {
+    throw new Error("You must wrap your component with NotesProvider");
+  }
+
+  return value;
+};
