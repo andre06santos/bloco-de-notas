@@ -11,8 +11,9 @@ export const createNote = async (data: any) => {
     });
 
     return response.data;
-  } catch (error) {
-    throw new Error("An error ocurred while trying to create the note");
+  } catch (error:any) {
+    console.log(error.message);
+    ;
     
   }
 };

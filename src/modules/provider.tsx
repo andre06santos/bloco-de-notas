@@ -17,8 +17,9 @@ export const NotesProvider = ({ children }: any) => {
 
       return response;
       
-    } catch (e) {
-      throw new Error("An error ocurred while trying to create the note")
+    } catch (e:any) {
+      console.log(e.message);
+      
     }
   }, []);
   
