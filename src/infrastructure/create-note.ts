@@ -12,8 +12,6 @@ export const createNote = async (data: any) => {
 
     return response.data;
   } catch (error:any) {
-    throw new Error(error.message);
-    ;
-    
+    throw new Error(error.message);    
   }
 };
