@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useNotes } from "../../modules/hooks/use-notes";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Input } from "../../ui/input";
 import { Textarea } from "../../ui/textarea";
-import "./styles.css";
 import { Button } from "../../ui/button";
-import { useNotes } from "../../modules/hooks/use-notes";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import "./styles.css";
 
 const CreatePage = () => {
   const { createNote } = useNotes();
@@ -15,6 +16,9 @@ const CreatePage = () => {
   const [descricao, setDescricao] = useState("");
 
 
+
+  
+
   const handleSubmit = async (e:any) => {
     e.preventDefault();
     const note = { titulo, descricao };    
@@ -23,13 +27,21 @@ const CreatePage = () => {
       if (!response) {
         throw new Error("Invalid response when trying to create note");
       }
-      console.log("Nota criada com sucesso");
-
+      
       navigate("/")
       
+      toast('Nota criada com sucesso!', {
+        position: "top-center",
+        type: 'success'
+      });
+      
+
     } catch (error) {
       console.error(error);
-      console.log("Ocorreu um erro ao tentar criar a nota");
+      toast('Ocorreu um erro ao tentar criar a nota', {
+        position: "top-center",
+        type:'error'
+      });
     }
   };
 
