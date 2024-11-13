@@ -1,13 +1,36 @@
 import "./styles.css";
 import { Note } from "../../ui/note";
+import { useEffect } from "react";
+import { useNotes } from "../../modules/hooks/use-notes";
 
 const NotesPage = () => {
-  // const { notes } = useNotes();
+  const { notes, getNotes } = useNotes();
 
-  // return notes.map((note, index) => {});
+  useEffect(() => {
+    const fetchNotes = async () => {
+      try {
+        if (notes.length === 0) {
+          await getNotes();
+        }
+      } catch (error) {
+        console.error("Erro ao buscar as notas:", error);
+      }
+    };
+
+    fetchNotes();
+  }, [getNotes, notes.length]);
+
+  if (notes.length === 0) {
+    return <div className="container-notes-page">Nenhuma nota encontrada.</div>;
+  }
+
+  console.log(notes);
+
   return (
     <div className="container-notes-page">
-      <Note />
+      {notes.map((note: any) => (
+        <Note title={note.titulo} description={note.descricao} />
+      ))}
     </div>
   );
 };
