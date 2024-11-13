@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useNotes } from "../../modules/hooks/use-notes";
 import { toast } from "react-toastify";
@@ -44,7 +44,7 @@ const EditPage = () => {
     } catch (error){
       console.error(error)
       
-      toast('Ocorreu um erro ao criar a nota', {
+      toast('Ocorreu um erro ao tentar editar a nota', {
         position: "top-center",
         type:'error'
       });

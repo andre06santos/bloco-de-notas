@@ -38,7 +38,7 @@ const CreatePage = () => {
 
     } catch (error) {
       console.error(error);
-      toast('Ocorreu um erro ao criar a nota', {
+      toast('Ocorreu um erro ao tentar criar a nota', {
         position: "top-center",
         type:'error'
       });
