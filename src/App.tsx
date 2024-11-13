@@ -12,7 +12,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<NotesPage />} />
           <Route path="/criar" element={<CreatePage />} />
-          <Route path="/editar/:id" element={<EditPage />} />
+          <Route path="/editar" element={<EditPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
