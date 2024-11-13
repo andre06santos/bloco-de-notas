@@ -1,20 +1,17 @@
 import { httpClient } from "../services/api/api-client";
 
-export const editNote = async (data:any) => {
-    try{
-        const response = await httpClient({
-            endpoint: `/${data.id}`,
-            config: {
-                method: "PUT",
-                data
-            }
-        })
+export const editNote = async (data: any) => {
+  try {
+    const response = await httpClient({
+      endpoint: `/${data.id}`,
+      config: {
+        method: "PUT",
+        data,
+      },
+    });
 
-        return response.data;
-
-    } catch (error:any){
-        throw new Error(error.message)
-        
-    }
-
-}
+    return response.data;
+  } catch (error: any) {
+    throw new Error(error.message);
+  }
+};
