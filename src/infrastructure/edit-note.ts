@@ -13,7 +13,7 @@ export const editNote = async (data:any) => {
         return response.data;
 
     } catch (error:any){
-        throw new Error
+        throw new Error(error.message)
         
     }
 
