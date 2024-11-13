@@ -30,7 +30,11 @@ export const NotesProvider = ({ children }: any) => {
         throw new Error("An error ocurred while trying to edit the note");
       }
 
-      setNotes((oldNotes: any) => [oldNotes.map((actualNote:any) => actualNote.id !== note.id ? actualNote : note)]);
+      setNotes((oldNotes: any) => [
+        oldNotes.map((actualNote: any) =>
+          actualNote.id !== note.id ? actualNote : note
+        ),
+      ]);
 
       return response;
     } catch (error: any) {
