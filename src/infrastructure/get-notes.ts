@@ -1,12 +1,17 @@
-// const getNotes = async () => {
-//   try {
-//     const response = await httpClient({
-//       endpoint: "/",
-//       config: {
-//         method: "GET",
-//       },
-//     });
+import { httpClient } from "../services/api/api-client";
 
-//     return response.data;
-//   } catch (e) {}
-// };
+export const getNotes = async () => {
+  try {
+    //SOLITAÇÃO GET PARA UM ENDPOINT USANDO O HTTPCLIENT.
+    const response = await httpClient({
+      endpoint: "/",
+      config: {
+        method: "GET",
+      },
+    });
+    // RETORNA OS DADOS DA REPOSTA
+    return response.data;
+  } catch (e: any) {
+    throw new Error(e.error);
+  }
+};
