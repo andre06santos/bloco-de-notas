@@ -11,7 +11,6 @@ const Note = ({note}:any) => {
 
   const handleDelete = () => {
     setShowModal((prevState) => !prevState);
-    console.log(showModal);
   };
 
   return (
