@@ -3,12 +3,6 @@ import { Note } from "../../ui/note";
 import { useEffect } from "react";
 import { useNotes } from "../../modules/hooks/use-notes";
 
-interface NoteType {
-  id: string;
-  title: string;
-  content: string;
-}
-
 const NotesPage = () => {
   const { notes, getNotes } = useNotes();
 
@@ -32,7 +26,7 @@ const NotesPage = () => {
 
   return (
     <div className="container-notes-page">
-      {notes.map((note: NoteType) => (
+      {notes.map((note: any) => (
         <Note key={note.id} note={note} />
       ))}
     </div>
