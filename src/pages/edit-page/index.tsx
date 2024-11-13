@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useNotes } from "../../modules/hooks/use-notes";
-import { toast } from "react-toastify";
 import { Input } from "../../ui/input";
 import { Textarea } from "../../ui/textarea";
 import { Button } from "../../ui/button";
@@ -33,21 +32,13 @@ const EditPage = () => {
         throw new Error("Invalid response when trying to edit note");
       }
       
-      toast('Nota editada com sucesso!', {
-        position: "top-center",
-        type: 'success'
-      });
-
+      console.log("Nota editada com sucesso");
       navigate("/")
       
       return response;
     } catch (error){
       console.error(error)
-      
-      toast('Ocorreu um erro ao tentar editar a nota', {
-        position: "top-center",
-        type:'error'
-      });
+      console.log("Ocorreu um erro ao tentar editar a nota");
       
     }
   };
