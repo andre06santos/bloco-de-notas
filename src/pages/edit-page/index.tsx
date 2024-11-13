@@ -18,7 +18,6 @@ const EditPage = () => {
   
   
   const handleSumbit = async (e:any) => {
-    console.log(id, titulo, descricao);
     e.preventDefault()
     const note = {
       id,
