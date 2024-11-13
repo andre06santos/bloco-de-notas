@@ -12,18 +12,19 @@ const EditPage = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
   const id = state.id;
-
+  
   const [titulo, setTitulo] = useState(state.titulo);
   const [descricao, setDescricao] = useState(state.descricao);
-
-  const note = {
-    id,
-    titulo,
-    descricao,
-  };
-
+  
+  
   const handleSumbit = async (e:any) => {
+    console.log(id, titulo, descricao);
     e.preventDefault()
+    const note = {
+      id,
+      titulo,
+      descricao,
+    };
     try{
 
       const response = await editNote(note);
@@ -48,8 +49,8 @@ const EditPage = () => {
       <h1 className="titulo-pagina">Editar a nota</h1>
 
       <form action="" onSubmit={handleSumbit}>
-        <Input label="Título" type="text" value={titulo} onChange={setTitulo} />
-        <Textarea label="Descrição" value={descricao} onChange={setDescricao} />
+        <Input label="Título" type="text" value={titulo} onChange={(e:any) => setTitulo(e.target.value)} />
+        <Textarea label="Descrição" value={descricao} onChange={(e:any) => setDescricao(e.target.value)} />
 
         <div className="container-function-page ">
           <div className="container-button-cancel">
