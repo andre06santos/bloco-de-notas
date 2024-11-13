@@ -6,7 +6,7 @@ import editIcons from "/icons/editar.png"
 import deleteIcons from "/icons/excluir.png"
 
 
-const Note = () => {
+const Note = ({note}:any) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleDelete = () => {
@@ -19,13 +19,13 @@ const Note = () => {
       {showModal && <Modal modalChange={handleDelete} />}
       <div className="container-nota">
         <div className="dados-nota">
-          <h2>Numero de série do antivírus</h2>
-          <p>12345678</p>
+          <h2>{note.titulo}</h2>
+          <p>{note.descricao}</p>
         </div>
 
         <div className="container-botoes">
           <div>
-            <Link to="/editar">
+            <Link to="/editar" state={note}>
               <button><img src={editIcons} /></button>
             </Link>
 
