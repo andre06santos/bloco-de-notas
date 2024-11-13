@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import "./styles.css";
 import { useState } from "react";
 import { Modal } from "../modal";
 import editIcons from "/icons/editar.png";
 import deleteIcons from "/icons/excluir.png";
+import "./styles.css";
 
 const Note = ({ note }: any) => {
   const [showModal, setShowModal] = useState(false);
@@ -25,13 +25,13 @@ const Note = ({ note }: any) => {
           <div>
             <Link to="/editar" state={note}>
               <button>
-                <img src={editIcons} />
+                <img src={editIcons} alt="Editar" />
               </button>
             </Link>
 
             <Link to="/">
               <button onClick={handleDelete}>
-                <img src={deleteIcons} />
+                <img src={deleteIcons} alt="Excluir" />
               </button>
             </Link>
           </div>
