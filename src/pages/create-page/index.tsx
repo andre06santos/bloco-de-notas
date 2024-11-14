@@ -7,6 +7,7 @@ import { Input } from "../../ui/input";
 import { Textarea } from "../../ui/textarea";
 import { Button } from "../../ui/button";
 import "./styles.css";
+import { Spinner } from "../../ui/spinner";
 
 const CreatePage = () => {
   const { createNote } = useNotes();
@@ -15,21 +16,28 @@ const CreatePage = () => {
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
     const note = { titulo, descricao };
+
     try {
+      setIsLoading(true);
       const response = await createNote(note);
       if (!response) {
         throw new Error("Invalid response when trying to create note");
       }
 
-      navigate("/");
+      setIsLoading(false);
 
       toast("Nota criada com sucesso!", {
         position: "top-center",
         type: "success",
       });
+
+      navigate("/");
     } catch (error) {
       console.error(error);
       toast("Ocorreu um erro ao tentar criar a nota", {
@@ -42,6 +50,7 @@ const CreatePage = () => {
   return (
     <div className="container-notas">
       <h1 className="titulo-pagina">Crie uma nota</h1>
+      {isLoading && <Spinner />}
 
       <form className="form" onSubmit={handleSubmit}>
         <Input
