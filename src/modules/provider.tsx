@@ -1,5 +1,5 @@
 // HOOKS BÁSICO DO REACT;
-import { createContext, useState, useCallback, useMemo } from "react";
+import { createContext, useState, useCallback, useMemo, useEffect } from "react";
 import { createNote as infraCreateNote } from "../infrastructure/create-note";
 import { getNotes as infraGetNotes } from "../infrastructure/get-notes";
 import { editNote as infraEditNote } from "../infrastructure/edit-note";
@@ -9,7 +9,6 @@ export const NotesContext = createContext<any>(undefined);
 export const NotesProvider = ({ children }: any) => {
   const [notes, setNotes] = useState<any>([]);
 
-  //PRIMEIRA FUNÇÃO QE CRIA UMA NOVA NOTA E ADICIONA AO ESTADO.
   const createNote = useCallback(async (note: any) => {
     try {
       const response = await infraCreateNote(note);
@@ -59,6 +58,10 @@ export const NotesProvider = ({ children }: any) => {
       throw new Error(error.message);
     }
   }, []);
+
+  useEffect(() => {
+    getNotes();
+  }, [])
 
   const value = useMemo(
     () => ({ notes, createNote, getNotes, editNote }),
