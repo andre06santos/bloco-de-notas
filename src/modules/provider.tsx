@@ -1,4 +1,3 @@
-// HOOKS BÁSICO DO REACT;
 import { createContext, useState, useCallback, useMemo, useEffect } from "react";
 import { createNote as infraCreateNote } from "../infrastructure/create-note";
 import { getNotes as infraGetNotes } from "../infrastructure/get-notes";
