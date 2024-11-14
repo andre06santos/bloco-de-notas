@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
-import "./styles.css";
 import { useState } from "react";
 import { Modal } from "../modal";
-import editIcons from "/icons/editar.png"
-import deleteIcons from "/icons/excluir.png"
+import editIcons from "/icons/editar.png";
+import deleteIcons from "/icons/excluir.png";
+import "./styles.css";
 
-
-const Note = ({note}:any) => {
+const Note = ({ id,titulo,descricao }: any) => {
   const [showModal, setShowModal] = useState(false);
+
+  const note = {
+    id,
+    titulo,
+    descricao
+  }
 
   const handleDelete = () => {
     setShowModal((prevState) => !prevState);
@@ -18,18 +23,22 @@ const Note = ({note}:any) => {
       {showModal && <Modal modalChange={handleDelete} />}
       <div className="container-nota">
         <div className="dados-nota">
-          <h2>{note.titulo}</h2>
-          <p>{note.descricao}</p>
+          <h2>{titulo}</h2>
+          <p>{descricao}</p>
         </div>
 
         <div className="container-botoes">
           <div>
             <Link to="/editar" state={note}>
-              <button><img src={editIcons} /></button>
+              <button>
+                <img src={editIcons} alt="Editar" />
+              </button>
             </Link>
 
             <Link to="/">
-              <button onClick={handleDelete}><img src={deleteIcons} /></button>
+              <button onClick={handleDelete}>
+                <img src={deleteIcons} alt="Excluir" />
+              </button>
             </Link>
           </div>
         </div>
