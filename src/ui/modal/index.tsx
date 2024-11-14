@@ -6,11 +6,10 @@ import { useNotes } from "../../modules/hooks/use-notes";
 import { toast } from "react-toastify";
 
 const Modal = ({ modalChange }: any) => {
-  const { state } = useLocation();
+  const { state:nota } = useLocation();
   const { getNotes } = useNotes();
   const navigate = useNavigate();
 
-  const nota = state;
   const handledeleteNote = async () => {
     try {
       const response = await deleteNote(nota);

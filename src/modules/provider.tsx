@@ -65,9 +65,6 @@ export const NotesProvider = ({ children }: any) => {
       if (!response) {
         throw new Error("An error occurred when trying to delete the note");
       }
-      setNotes((oldNotes: any) => [
-        oldNotes.map((deleteActualNote: any) => deleteActualNote.id !== note.id ? deleteActualNote : note),
-      ]);
 
       return response;
     } catch (error: any) {
