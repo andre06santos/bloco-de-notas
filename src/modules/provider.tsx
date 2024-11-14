@@ -2,7 +2,7 @@ import { createContext, useState, useCallback, useMemo, useEffect } from "react"
 import { createNote as infraCreateNote } from "../infrastructure/create-note";
 import { getNotes as infraGetNotes } from "../infrastructure/get-notes";
 import { editNote as infraEditNote } from "../infrastructure/edit-note";
-
+import { deleteNote as infraDeleteNote } from "../infrastructure/delete-note";
 export const NotesContext = createContext<any>(undefined);
 
 export const NotesProvider = ({ children }: any) => {
@@ -58,12 +58,30 @@ export const NotesProvider = ({ children }: any) => {
     }
   }, []);
 
+  const deleteNote = useCallback(async (note: any) => {
+    try {
+      const response = await infraDeleteNote(note);
+
+      if (!response) {
+        throw new Error("An error occurred when trying to delete the note");
+      }
+      setNotes((oldNotes: any) => [
+        oldNotes.map((deleteActualNote: any) => deleteActualNote.id !== note.id ? deleteActualNote : note),
+      ]);
+
+      return response;
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
+  }, []);
+
+
   useEffect(() => {
     getNotes();
   }, [])
 
   const value = useMemo(
-    () => ({ notes, createNote, getNotes, editNote }),
+    () => ({ notes, createNote, getNotes, editNote, deleteNote }),
     [notes]
   );
 
