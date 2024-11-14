@@ -18,7 +18,7 @@ const EditPage = () => {
   const [titulo, setTitulo] = useState(state.titulo);
   const [descricao, setDescricao] = useState(state.descricao);
 
-  const [hasSpinner, setHasSpinner] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSumbit = async (e: any) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const EditPage = () => {
     };
 
     try {
-      setHasSpinner(true);
+      setIsLoading(true);
       const response = await editNote(note);
 
       if (!response) {
@@ -43,6 +43,8 @@ const EditPage = () => {
         type: "success",
       });
       await getNotes();
+
+      setIsLoading(false)
 
       navigate("/");
 
@@ -59,7 +61,7 @@ const EditPage = () => {
 
   return (
     <div className="container-notas">
-      {hasSpinner && <Spinner />}
+      {isLoading && <Spinner />}
 
       <h1 className="titulo-pagina">Editar a nota</h1>
 

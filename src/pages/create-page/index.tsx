@@ -16,7 +16,7 @@ const CreatePage = () => {
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
 
-  const [hasSpinner, setHasSpinner] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -24,13 +24,13 @@ const CreatePage = () => {
     const note = { titulo, descricao };
 
     try {
-      setHasSpinner(true);
+      setIsLoading(true);
       const response = await createNote(note);
       if (!response) {
         throw new Error("Invalid response when trying to create note");
       }
 
-      setHasSpinner(false);
+      setIsLoading(false);
 
       toast("Nota criada com sucesso!", {
         position: "top-center",
@@ -50,7 +50,7 @@ const CreatePage = () => {
   return (
     <div className="container-notas">
       <h1 className="titulo-pagina">Crie uma nota</h1>
-      {hasSpinner && <Spinner />}
+      {isLoading && <Spinner />}
 
       <form className="form" onSubmit={handleSubmit}>
         <Input
