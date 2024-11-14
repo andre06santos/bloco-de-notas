@@ -59,7 +59,7 @@ const CreatePage = () => {
         <div className="container-function-page ">
           <div className="container-button-cancel">
             <Link to="/">
-              <Button type="button" typeButton="cancel" label={"CANCELAR"} />
+              <Button typeButton="cancel" label={"CANCELAR"} />
             </Link>
           </div>
           <div className="container-button-create">

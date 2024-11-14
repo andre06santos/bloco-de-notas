@@ -37,13 +37,11 @@ const Modal = ({ modalChange }: any) => {
 
         <div className="modal__buttons">
           <Button
-            type="button"
             typeButton="delete"
             label={"EXCLUIR"}
             onClick={handledeleteNote}
           />
           <Button
-            type="button"
             typeButton="cancel"
             label={"CANCELAR"}
             onClick={modalChange}

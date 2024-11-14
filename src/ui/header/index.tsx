@@ -9,7 +9,7 @@ const Header = () => {
         <h2 className="header__title">Início</h2>
       </Link>
       <Link to="/criar">
-        <Button type={"button"} typeButton="add" label={"ADICIONAR"} />
+        <Button typeButton="add" label={"ADICIONAR"} />
       </Link>
     </header>
   );
