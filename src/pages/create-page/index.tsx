@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useNotes } from "../../modules/hooks/use-notes";
 import { toast } from "react-toastify";
@@ -8,14 +8,15 @@ import { Textarea } from "../../ui/textarea";
 import { Button } from "../../ui/button";
 import "./styles.css";
 
+
 const CreatePage = () => {
   const { createNote } = useNotes();
   const navigate = useNavigate();
 
-  const [titulo, setTitulo] = useState("");
-  const [descricao, setDescricao] = useState("");
+  const [titulo, setTitulo] = useState<string>("");
+  const [descricao, setDescricao] = useState<string>("");
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const note = { titulo, descricao };
     try {
