@@ -6,7 +6,6 @@ import { Input } from "../../ui/input";
 import { Textarea } from "../../ui/textarea";
 import { Button } from "../../ui/button";
 import "./styles.css";
-import { Spinner } from "../../ui/spinner";
 
 const EditPage = () => {
   const { editNote, getNotes } = useNotes();
@@ -18,33 +17,25 @@ const EditPage = () => {
   const [titulo, setTitulo] = useState(state.titulo);
   const [descricao, setDescricao] = useState(state.descricao);
 
-  const [isLoading, setIsLoading] = useState(false);
-
   const handleSumbit = async (e: any) => {
     e.preventDefault();
-
     const note = {
       id,
       titulo,
       descricao,
     };
-
     try {
-      setIsLoading(true);
       const response = await editNote(note);
 
       if (!response) {
         throw new Error("Invalid response when trying to edit note");
       }
-      
 
       toast("Nota editada com sucesso!", {
         position: "top-center",
         type: "success",
       });
       await getNotes();
-
-      setIsLoading(false)
 
       navigate("/");
 
@@ -61,8 +52,6 @@ const EditPage = () => {
 
   return (
     <div className="container-notas">
-      {isLoading && <Spinner />}
-
       <h1 className="titulo-pagina">Editar a nota</h1>
 
       <form action="" onSubmit={handleSumbit}>
