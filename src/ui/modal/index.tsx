@@ -1,7 +1,36 @@
 import "./styles.css";
 import { Button } from "../button";
+import { useLocation, useNavigate } from "react-router-dom";
+import { deleteNote } from "../../infrastructure/delete-note";
+import { useNotes } from "../../modules/hooks/use-notes";
+import { toast } from "react-toastify";
 
 const Modal = ({ modalChange }: any) => {
+  const { state } = useLocation();
+  const { getNotes } = useNotes();
+  const navigate = useNavigate();
+
+  const nota = state;
+  const handledeleteNote = async () => {
+    try {
+      const response = await deleteNote(nota);
+      if (!response) {
+        throw new Error("Invalid response when trying to delete note")
+      }
+      getNotes()
+      navigate("/");
+      
+      toast("Nota deletada com sucesso!!!",{
+        position: "top-center",
+        type: "success"
+      })
+    } catch (error) {
+      toast("Não foi possivel deletar a nota!!!",{
+        position:"top-center",
+        type:"error"
+      })
+    }
+  };
   return (
     <div className="modal__bg">
       <div className="modal">
@@ -12,7 +41,7 @@ const Modal = ({ modalChange }: any) => {
             type="button"
             typeButton="delete"
             label={"EXCLUIR"}
-            onClick={modalChange}
+            onClick={handledeleteNote}
           />
           <Button
             type="button"
