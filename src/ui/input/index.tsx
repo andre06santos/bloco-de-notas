@@ -1,9 +1,16 @@
+import { InputHTMLAttributes } from "react";
 import "./styles.css";
 
-const Input = ({ label, type , ...rest}: any) => {
-  const inputClasses: any = {
+type InputProps = {
+  label: string,
+  type: "text" | "submit" | "reset",
+} | InputHTMLAttributes<HTMLInputElement>
+
+const Input = ({ label, type , ...rest}: InputProps) => {
+  const inputClasses: Record<"text" | "submit" | "reset", string> = {
     text: "input-text",
     submit: "input-submit",
+    reset: "input-reset"
   };
 
   const className = inputClasses[type];
