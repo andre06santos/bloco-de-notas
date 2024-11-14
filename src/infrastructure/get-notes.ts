@@ -1,6 +1,6 @@
 import { httpClient } from "../services/api/api-client";
 
-export const getNotes = async () => {
+const getNotes = async () => {
   try {
     const response = await httpClient({
       endpoint: "/",
@@ -14,3 +14,4 @@ export const getNotes = async () => {
     throw new Error(e.error);
   }
 };
+export {getNotes}
