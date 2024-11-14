@@ -3,19 +3,25 @@ import { createNote as infraCreateNote } from "../infrastructure/create-note";
 import { getNotes as infraGetNotes } from "../infrastructure/get-notes";
 import { editNote as infraEditNote } from "../infrastructure/edit-note";
 
+type NotesProps = {
+  id: number,
+  title: string,
+  description: string
+}
+
 export const NotesContext = createContext<any>(undefined);
 
 export const NotesProvider = ({ children }: any) => {
-  const [notes, setNotes] = useState<any>([]);
+  const [notes, setNotes] = useState<NotesProps[]>([]);
 
-  const createNote = useCallback(async (note: any) => {
+  const createNote = useCallback(async (note: NotesProps) => {
     try {
       const response = await infraCreateNote(note);
 
       if (!response) {
         throw new Error("An error ocurred while trying to create the note");
       }
-      setNotes((oldNotes: any) => [...oldNotes, response]);
+      setNotes((oldNotes: NotesProps[]) => [...oldNotes, response]);
 
       return response;
     } catch (error: any) {
@@ -38,7 +44,7 @@ export const NotesProvider = ({ children }: any) => {
     }
   }, []);
 
-  const editNote = useCallback(async (note: any) => {
+  const editNote = useCallback(async (note: NotesProps) => {
     try {
       const response = await infraEditNote(note);
 

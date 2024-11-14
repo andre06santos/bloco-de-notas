@@ -1,6 +1,12 @@
 import { httpClient } from "../services/api/api-client";
 
-export const createNote = async (data: any) => {
+type NotesProps = {
+  id: number,
+  title: string,
+  description: string
+}
+
+export const createNote = async (data: NotesProps) => {
   try {
     const response = await httpClient({
       endpoint: "/",
