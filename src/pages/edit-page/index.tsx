@@ -15,6 +15,7 @@ const EditPage = () => {
   const navigate = useNavigate();
   const id = state.id;
 
+
   const [titulo, setTitulo] = useState(state.titulo);
   const [descricao, setDescricao] = useState(state.descricao);
 
