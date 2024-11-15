@@ -7,7 +7,6 @@ import { Input } from "../../ui/input";
 import { Textarea } from "../../ui/textarea";
 import { Button } from "../../ui/button";
 import "./styles.css";
-import { Spinner } from "../../ui/spinner";
 
 const CreatePage = () => {
   const { createNote } = useNotes();
@@ -20,9 +19,7 @@ const CreatePage = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-
     const note = { titulo, descricao };
-
     try {
       setIsLoading(true);
       const response = await createNote(note);
@@ -36,8 +33,6 @@ const CreatePage = () => {
         position: "top-center",
         type: "success",
       });
-
-      navigate("/");
     } catch (error) {
       console.error(error);
       toast("Ocorreu um erro ao tentar criar a nota", {

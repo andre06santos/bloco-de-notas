@@ -35,7 +35,7 @@ const Note = ({ id,titulo,descricao }: any) => {
               </button>
             </Link>
 
-            <Link to="/">
+            <Link to="/" state={note}>
               <button onClick={handleDelete}>
                 <img src={deleteIcons} alt="Excluir" />
               </button>
