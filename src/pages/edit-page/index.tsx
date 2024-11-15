@@ -6,6 +6,7 @@ import { Input } from "../../ui/input";
 import { Textarea } from "../../ui/textarea";
 import { Button } from "../../ui/button";
 import "./styles.css";
+import { Spinner } from "../../ui/spinner";
 
 const EditPage = () => {
   const { editNote, getNotes } = useNotes();
