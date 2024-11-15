@@ -6,7 +6,7 @@ type NotesProps = {
   description: string;
 };
 
-export const editNote = async (data: NotesProps) => {
+export const editeNote = async (data: NotesProps) => {
   try {
     const response = await httpClient({
       endpoint: `/${data.id}`,
