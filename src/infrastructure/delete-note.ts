@@ -6,17 +6,17 @@ type DeleteNoteProps = {
   description: string;
 };
 
-export const deleteNote = async (data:any) =>{
-    try{
-        const response = await httpClient({
-            endpoint: `/${data.id}`,
-            config: {
-                method: "DELETE",
-                data,
-            },
-        });
-} catch (error) {
+export const deleteNote = async (data: DeleteNoteProps) => {
+  try {
+    await httpClient({
+      endpoint: `/notes/${data.id}`,
+      config: {
+        method: "DELETE",
+      },
+    });
+  } catch (error) {
     if (error instanceof Error) {
-        throw new Error(error.message);
+      throw new Error(error.message);
     }
-}
+  }
+};
