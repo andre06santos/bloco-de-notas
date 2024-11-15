@@ -7,7 +7,7 @@ type ButtonProps = {
 };
 
 const Button = ({ label, typeButton, onClick }: ButtonProps) => {
-  const buttonClasses: Record<"delete" | "add" | "cancel", string> = {
+  const buttonClasses: Record<ButtonProps["typeButton"], string> = {
     delete: "button-delete",
     add: "button-add",
     cancel: "button-cancel",
