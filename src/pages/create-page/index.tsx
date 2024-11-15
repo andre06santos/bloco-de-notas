@@ -30,6 +30,8 @@ const CreatePage = () => {
 
       setIsLoading(false);
 
+      navigate("/")
+
       toast("Nota criada com sucesso!", {
         position: "top-center",
         type: "success",
