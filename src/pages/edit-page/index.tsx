@@ -8,11 +8,12 @@ import { Button } from "../../ui/button";
 import "./styles.css";
 
 const EditPage = () => {
-  const { editNote } = useNotes();
+  const { editNote, getNotes } = useNotes();
 
   const { state } = useLocation();
   const navigate = useNavigate();
   const id = state.id;
+
 
   const [titulo, setTitulo] = useState(state.titulo);
   const [descricao, setDescricao] = useState(state.descricao);
@@ -35,6 +36,7 @@ const EditPage = () => {
         position: "top-center",
         type: "success",
       });
+      await getNotes();
 
       navigate("/");
 
