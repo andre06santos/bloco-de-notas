@@ -1,10 +1,10 @@
 import { httpClient } from "../services/api/api-client";
 
 type NotesProps = {
-  id: number,
-  title: string,
-  description: string
-}
+  id: number;
+  title: string;
+  description: string;
+};
 
 export const createNote = async (data: NotesProps) => {
   try {
@@ -19,7 +19,7 @@ export const createNote = async (data: NotesProps) => {
     return response.data;
   } catch (error) {
     if (error instanceof Error) {
-    throw new Error(error.message);
-}
+      throw new Error(error.message);
+    }
   }
 };
