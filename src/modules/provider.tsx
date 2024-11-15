@@ -24,8 +24,10 @@ export const NotesProvider = ({ children }: any) => {
       setNotes((oldNotes: NotesProps[]) => [...oldNotes, response]);
 
       return response;
-    } catch (error: any) {
+    } catch (error) {
+      if (error instanceof Error) {
       throw new Error(error.message);
+}
     }
   }, []);
 
@@ -39,8 +41,10 @@ export const NotesProvider = ({ children }: any) => {
       setNotes(response);
 
       return response;
-    } catch (error: any) {
+    } catch (error) {
+      if (error instanceof Error) {
       throw new Error(error.message);
+}
     }
   }, []);
 
@@ -59,8 +63,10 @@ export const NotesProvider = ({ children }: any) => {
       ]);
 
       return response;
-    } catch (error: any) {
+    } catch (error) {
+      if (error instanceof Error) {
       throw new Error(error.message);
+}
     }
   }, []);
 
@@ -73,8 +79,12 @@ export const NotesProvider = ({ children }: any) => {
       }
 
       return response;
-    } catch (error: any) {
+    } catch (error) {
+      if (error instanceof Error
+      if (error instanceof Error) {
+}
       throw new Error(error.message);
+}
     }
   }, []);
 

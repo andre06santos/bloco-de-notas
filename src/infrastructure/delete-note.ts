@@ -9,9 +9,8 @@ export const deleteNote = async (data:any) =>{
                 data,
             },
         });
-
-        return response.data;
-    }catch(error: any){
+} catch (error) {
+    if (error instanceof Error) {
         throw new Error(error.message);
     }
 }
