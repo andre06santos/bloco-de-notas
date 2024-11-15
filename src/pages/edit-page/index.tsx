@@ -48,8 +48,8 @@ const EditPage = () => {
 
       return response;
     } catch (error) {
+      setIsLoading(false)
       console.error(error);
-
       toast("Ocorreu um erro ao tentar editar a nota", {
         position: "top-center",
         type: "error",
