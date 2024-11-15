@@ -31,6 +31,7 @@ const Modal = ({ modalChange }: any) => {
         type: "success"
       })
     } catch (error) {
+      setIsLoading(false)
       toast("Não foi possivel deletar a nota!!!",{
         position:"top-center",
         type:"error"
