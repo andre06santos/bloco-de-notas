@@ -1,4 +1,10 @@
-import { httpClient } from "../services/api/api-client"
+import { httpClient } from "../services/api/api-client";
+
+type DeleteNoteProps = {
+  id: number;
+  title: string;
+  description: string;
+};
 
 export const deleteNote = async (data:any) =>{
     try{
