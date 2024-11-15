@@ -1,10 +1,10 @@
 import "./style.css";
 
-interface ButtonProps{
-  label: string,
-  typeButton: "delete" | "add" | "cancel",
+type ButtonProps = {
+  label: string;
+  typeButton: "delete" | "add" | "cancel";
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-}
+};
 
 const Button = ({ label, typeButton, onClick }: ButtonProps) => {
   const buttonClasses: Record<"delete" | "add" | "cancel", string> = {
