@@ -6,7 +6,7 @@ type NotesProps = {
   description: string;
 };
 
-export const createNote = async (data: NotesProps) => {
+const createNote = async (data: NotesProps) => {
   try {
     const response = await httpClient({
       endpoint: "/",
@@ -23,3 +23,5 @@ export const createNote = async (data: NotesProps) => {
     }
   }
 };
+
+export { createNote };
