@@ -55,12 +55,12 @@ const CreatePage = () => {
           label="Título"
           type="text"
           value={titulo}
-          onChange={(e: any) => setTitulo(e.target.value)}
+          onChange={(e) => setTitulo(e.target.value)}
         />
         <Textarea
           label="Descrição"
           value={descricao}
-          onChange={(e: any) => setDescricao(e.target.value)}
+          onChange={(e) => setDescricao(e.target.value)}
         />
 
         <div className="container-function-page ">
