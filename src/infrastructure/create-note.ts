@@ -1,7 +1,7 @@
 import { httpClient } from "../services/api/api-client";
 
 type NotesProps = {
-  id: number;
+  id: string;
   title: string;
   description: string;
 };
