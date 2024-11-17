@@ -1,12 +1,12 @@
 import { httpClient } from "../services/api/api-client";
 
-type NotesProps = {
-  id: number;
+type EditNotesProps = {
+  id: string;
   title: string;
   description: string;
 };
 
-export const editeNote = async (data: NotesProps) => {
+const editNote = async (data: EditNotesProps) => {
   try {
     const response = await httpClient({
       endpoint: `/${data.id}`,
@@ -23,3 +23,5 @@ export const editeNote = async (data: NotesProps) => {
     }
   }
 };
+
+export { editNote };
