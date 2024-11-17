@@ -9,7 +9,7 @@ type DeleteNoteProps = {
 const deleteNote = async (data: DeleteNoteProps) => {
   try {
     await httpClient({
-      endpoint: `/notes/${data.id}`,
+      endpoint: `/${data.id}`,
       config: {
         method: "DELETE",
       },
