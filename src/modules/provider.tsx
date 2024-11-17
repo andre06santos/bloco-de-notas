@@ -45,6 +45,7 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
       return response;
     } catch (error) {
       if (error instanceof Error) {
+        console.error("Create note failed:", error.message);
         throw new Error(error.message);
       }
     }
@@ -60,6 +61,7 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
       return response;
     } catch (error) {
       if (error instanceof Error) {
+        console.error("Get notes failed:", error.message);
         throw new Error(error.message);
       }
     }
@@ -79,6 +81,7 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
       return response;
     } catch (error) {
       if (error instanceof Error) {
+        console.error("Edit note failed:", error.message);
         throw new Error(error.message);
       }
     }
@@ -92,6 +95,7 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
       );
     } catch (error) {
       if (error instanceof Error) {
+        console.error("Delete note failed:", error.message);
         throw new Error(error.message);
       }
     }
