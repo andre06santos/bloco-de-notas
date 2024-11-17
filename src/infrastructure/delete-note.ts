@@ -6,7 +6,7 @@ type DeleteNoteProps = {
   description: string;
 };
 
-export const deleteNote = async (data: DeleteNoteProps) => {
+const deleteNote = async (data: DeleteNoteProps) => {
   try {
     await httpClient({
       endpoint: `/notes/${data.id}`,
@@ -20,3 +20,5 @@ export const deleteNote = async (data: DeleteNoteProps) => {
     }
   }
 };
+
+export { deleteNote };
