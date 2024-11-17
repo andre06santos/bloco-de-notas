@@ -7,37 +7,39 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 import { Spinner } from "../spinner";
 
-const Modal = ({ modalChange }: any) => {
-  const { state:nota } = useLocation();
+type ModalProps = {
+  modalChange: () => void;
+};
+
+const Modal = ({ modalChange }: ModalProps) => {
+  const { state: nota } = useLocation();
   const { getNotes } = useNotes();
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handledeleteNote = async () => {
     try {
-      setIsLoading(true)
+      setIsLoading(true);
 
-      const response = await deleteNote(nota);
-      if (!response) {
-        throw new Error("Invalid response when trying to delete note")
-      }
+      await deleteNote(nota);
 
-      getNotes()
+      getNotes();
       navigate("/");
-      setIsLoading(false)
+      setIsLoading(false);
 
-      toast("Nota deletada com sucesso!!!",{
+      toast("Nota deletada com sucesso!!!", {
         position: "top-center",
-        type: "success"
-      })
+        type: "success",
+      });
     } catch (error) {
-      setIsLoading(false)
-      toast("Não foi possivel deletar a nota!!!",{
-        position:"top-center",
-        type:"error"
-      })
+      setIsLoading(false);
+      toast("Não foi possível deletar a nota!!!", {
+        position: "top-center",
+        type: "error",
+      });
     }
   };
+
   return (
     <div className="modal__bg">
       {isLoading && <Spinner />}
