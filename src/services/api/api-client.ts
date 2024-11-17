@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
 const axiosInstance = axios.create({
   baseURL: "http://localhost:3000/notas",
@@ -7,6 +7,20 @@ const axiosInstance = axios.create({
   },
 });
 
-export const httpClient = ({ endpoint, config }: any) => {
-  return axiosInstance(endpoint, config);
+type HttpClientParams = {
+  endpoint: string;
+  config?: AxiosRequestConfig;
+};
+
+export const httpClient = async ({
+  endpoint,
+  config,
+}: HttpClientParams): Promise<AxiosResponse> => {
+  try {
+    const response = await axiosInstance(endpoint, config);
+    return response;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 };
