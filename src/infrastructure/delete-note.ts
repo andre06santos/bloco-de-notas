@@ -1,7 +1,7 @@
 import { httpClient } from "../services/api/api-client";
 
 type DeleteNoteProps = {
-  id: number;
+  id: string;
   title: string;
   description: string;
 };
