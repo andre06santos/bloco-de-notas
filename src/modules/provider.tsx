@@ -11,7 +11,7 @@ import { editNote as infraEditNote } from "../infrastructure/edit-note";
 import { deleteNote as infraDeleteNote } from "../infrastructure/delete-note";
 
 type NotesProps = {
-  id: number;
+  id: string;
   title: string;
   description: string;
 };
