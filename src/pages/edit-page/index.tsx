@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useNotes } from "../../modules/hooks/use-notes";
 import { toast } from "react-toastify";
@@ -8,26 +8,38 @@ import { Button } from "../../ui/button";
 import "./styles.css";
 import { Spinner } from "../../ui/spinner";
 
+type Note = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+type LocationState = {
+  id: string;
+  titulo: string;
+  descricao: string;
+};
+
 const EditPage = () => {
   const { editNote, getNotes } = useNotes();
-
-  const { state } = useLocation();
+  const { state } = useLocation() as { state: LocationState };
   const navigate = useNavigate();
-  const id = state.id;
 
+  const { id, titulo: initialTitulo, descricao: initialDescricao } = state;
 
-  const [titulo, setTitulo] = useState(state.titulo);
-  const [descricao, setDescricao] = useState(state.descricao);
+  const [titulo, setTitulo] = useState<string>(initialTitulo);
+  const [descricao, setDescricao] = useState<string>(initialDescricao);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSumbit = async (e: any) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const note = {
-      id,
-      titulo,
-      descricao,
+
+    const note: Note = {
+      id: id,
+      title: titulo,
+      description: descricao,
     };
+
     try {
       setIsLoading(true);
       const response = await editNote(note);
@@ -40,15 +52,13 @@ const EditPage = () => {
         position: "top-center",
         type: "success",
       });
-      await getNotes();
 
-      setIsLoading(false)
+      await getNotes();
+      setIsLoading(false);
 
       navigate("/");
-
-      return response;
     } catch (error) {
-      setIsLoading(false)
+      setIsLoading(false);
       console.error(error);
       toast("Ocorreu um erro ao tentar editar a nota", {
         position: "top-center",
@@ -63,20 +73,20 @@ const EditPage = () => {
 
       <h1 className="titulo-pagina">Editar a nota</h1>
 
-      <form action="" onSubmit={handleSumbit}>
+      <form onSubmit={handleSubmit}>
         <Input
           label="Título"
           type="text"
           value={titulo}
-          onChange={(e: any) => setTitulo(e.target.value)}
+          onChange={(e) => setTitulo(e.target.value)}
         />
         <Textarea
           label="Descrição"
           value={descricao}
-          onChange={(e: any) => setDescricao(e.target.value)}
+          onChange={(e) => setDescricao(e.target.value)}
         />
 
-        <div className="container-function-page ">
+        <div className="container-function-page">
           <div className="container-button-cancel">
             <Link to="/">
               <Button typeButton="cancel" label="CANCELAR" />
