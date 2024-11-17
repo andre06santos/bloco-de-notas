@@ -7,6 +7,7 @@ import { Input } from "../../ui/input";
 import { Textarea } from "../../ui/textarea";
 import { Button } from "../../ui/button";
 import "./styles.css";
+import { v4 as uuidv4 } from "uuid";
 
 const CreatePage = () => {
   const { createNote } = useNotes();
@@ -17,7 +18,13 @@ const CreatePage = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const note = { titulo, descricao };
+
+    const note = {
+      id: uuidv4(),
+      title: titulo,
+      description: descricao,
+    };
+
     try {
       const response = await createNote(note);
       if (!response) {
