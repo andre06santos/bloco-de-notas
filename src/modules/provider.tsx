@@ -18,7 +18,7 @@ type NotesProps = {
 
 type NotesContextType = {
   notes: NotesProps[];
-  createNote: (note: NotesProps) => Promise<NotesProps | undefined>;
+  createNote: (note: Omit<NotesProps, "id">) => Promise<Omit<NotesProps, "id"> | undefined>;
   getNotes: () => Promise<NotesProps[] | undefined>;
   editNote: (note: NotesProps) => Promise<NotesProps | undefined>;
   deleteNote: (note: NotesProps) => Promise<void>;
@@ -35,7 +35,7 @@ type NotesProviderProps = {
 export const NotesProvider = ({ children }: NotesProviderProps) => {
   const [notes, setNotes] = useState<NotesProps[]>([]);
 
-  const createNote = useCallback(async (note: NotesProps) => {
+  const createNote = useCallback(async (note: Omit<NotesProps, "id">) => {
     try {
       const response = await infraCreateNote(note);
       if (!response) {
