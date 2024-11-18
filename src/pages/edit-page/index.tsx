@@ -14,15 +14,9 @@ type Note = {
   description: string;
 };
 
-type LocationState = {
-  id: string;
-  titulo: string;
-  descricao: string;
-};
-
 const EditPage = () => {
   const { editNote, getNotes } = useNotes();
-  const { state } = useLocation() as { state: LocationState };
+  const { state } = useLocation();
   const navigate = useNavigate();
 
   const { id, titulo: initialTitulo, descricao: initialDescricao } = state;
@@ -53,7 +47,7 @@ const EditPage = () => {
         type: "success",
       });
 
-      await getNotes();
+      getNotes();
       setIsLoading(false);
 
       navigate("/");
