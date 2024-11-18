@@ -6,7 +6,7 @@ type NotesProps = {
   description: string;
 };
 
-const createNote = async (data: NotesProps) => {
+const createNote = async (data: Omit<NotesProps, "id">) => {
   try {
     const response = await httpClient({
       endpoint: "/",
