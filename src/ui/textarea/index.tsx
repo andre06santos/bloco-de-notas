@@ -1,12 +1,17 @@
-import "./styles.css"
+import { TextareaHTMLAttributes } from "react";
+import "./styles.css";
 
-const Textarea = ({label, ...rest }: any) => {
+type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
+  label?: string;
+};
+
+const Textarea = ({ label, ...rest }: TextareaProps) => {
   return (
-    <div className={`textarea_component`}>
+    <div className="textarea_component">
       {label && <label className="textarea__label">{label}</label>}
       <textarea {...rest}></textarea>
     </div>
-  )
-}
+  );
+};
 
-export {Textarea}
+export { Textarea };

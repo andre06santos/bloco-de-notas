@@ -1,7 +1,13 @@
 import "./style.css";
 
-const Button = ({ label, typeButton, onClick }: any) => {
-  const buttonClasses: any = {
+type ButtonProps = {
+  label: string;
+  typeButton: "delete" | "add" | "cancel";
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+};
+
+const Button = ({ label, typeButton, onClick }: ButtonProps) => {
+  const buttonClasses: Record<ButtonProps["typeButton"], string> = {
     delete: "button-delete",
     add: "button-add",
     cancel: "button-cancel",

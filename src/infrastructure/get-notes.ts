@@ -10,8 +10,10 @@ const getNotes = async () => {
     });
 
     return response.data;
-  } catch (e: any) {
-    throw new Error(e.error);
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(error.message);
+    }
   }
 };
-export {getNotes}
+export { getNotes };

@@ -5,14 +5,20 @@ import editIcons from "/icons/editar.png";
 import deleteIcons from "/icons/excluir.png";
 import "./styles.css";
 
-const Note = ({ id,titulo,descricao }: any) => {
+type NoteProps = {
+  id: string;
+  titulo: string;
+  descricao: string;
+};
+
+const Note = ({ id, titulo, descricao }: NoteProps) => {
   const [showModal, setShowModal] = useState(false);
 
   const note = {
     id,
     titulo,
-    descricao
-  }
+    descricao,
+  };
 
   const handleDelete = () => {
     setShowModal((prevState) => !prevState);

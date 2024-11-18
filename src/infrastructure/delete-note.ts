@@ -1,17 +1,24 @@
-import { httpClient } from "../services/api/api-client"
+import { httpClient } from "../services/api/api-client";
 
-export const deleteNote = async (data:any) =>{
-    try{
-        const response = await httpClient({
-            endpoint: `/${data.id}`,
-            config: {
-                method: "DELETE",
-                data,
-            },
-        });
+type DeleteNoteProps = {
+  id: string;
+  title: string;
+  description: string;
+};
 
-        return response.data;
-    }catch(error: any){
-        throw new Error(error.message);
+const deleteNote = async (data: DeleteNoteProps) => {
+  try {
+    await httpClient({
+      endpoint: `/${data.id}`,
+      config: {
+        method: "DELETE",
+      },
+    });
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(error.message);
     }
-}
+  }
+};
+
+export { deleteNote };

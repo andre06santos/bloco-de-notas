@@ -1,6 +1,12 @@
 import { httpClient } from "../services/api/api-client";
 
-export const editNote = async (data: any) => {
+type EditNotesProps = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+const editNote = async (data: EditNotesProps) => {
   try {
     const response = await httpClient({
       endpoint: `/${data.id}`,
@@ -11,7 +17,11 @@ export const editNote = async (data: any) => {
     });
 
     return response.data;
-  } catch (error: any) {
-    throw new Error(error.message);
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(error.message);
+    }
   }
 };
+
+export { editNote };
