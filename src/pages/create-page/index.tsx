@@ -6,8 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { Input } from "../../ui/input";
 import { Textarea } from "../../ui/textarea";
 import { Button } from "../../ui/button";
+import { Spinner } from "../../ui/spinner";
 import "./styles.css";
-import { v4 as uuidv4 } from "uuid";
 
 const CreatePage = () => {
   const { createNote } = useNotes();
@@ -15,22 +15,25 @@ const CreatePage = () => {
 
   const [titulo, setTitulo] = useState<string>("");
   const [descricao, setDescricao] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     const note = {
-      id: uuidv4(),
       title: titulo,
       description: descricao,
     };
 
     try {
+      setIsLoading(true);
+
       const response = await createNote(note);
       if (!response) {
         throw new Error("Invalid response when trying to create note");
       }
 
+      setIsLoading(false);
       navigate("/");
 
       toast("Nota criada com sucesso!", {
@@ -38,6 +41,7 @@ const CreatePage = () => {
         type: "success",
       });
     } catch (error) {
+      setIsLoading(false);
       console.error(error);
       toast("Ocorreu um erro ao tentar criar a nota", {
         position: "top-center",
@@ -48,6 +52,8 @@ const CreatePage = () => {
 
   return (
     <div className="container-notas">
+      {isLoading && <Spinner />}
+
       <h1 className="titulo-pagina">Crie uma nota</h1>
 
       <form className="form" onSubmit={handleSubmit}>
