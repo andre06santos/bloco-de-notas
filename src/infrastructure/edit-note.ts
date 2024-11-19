@@ -9,7 +9,7 @@ type EditNotesProps = {
 const editNote = async (data: EditNotesProps) => {
   try {
     const response = await httpClient({
-      endpoint: `/${data.id}`,
+      endpoint: `/${data.id}/`,
       config: {
         method: "PUT",
         data,

@@ -19,7 +19,7 @@ const EditPage = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  const { id, titulo: initialTitulo, descricao: initialDescricao } = state;
+  const { id, title: initialTitulo, description: initialDescricao } = state;
 
   const [titulo, setTitulo] = useState<string>(initialTitulo);
   const [descricao, setDescricao] = useState<string>(initialDescricao);
