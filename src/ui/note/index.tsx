@@ -7,17 +7,17 @@ import "./styles.css";
 
 type NoteProps = {
   id: string;
-  titulo: string;
-  descricao: string;
+  title: string;
+  description: string;
 };
 
-const Note = ({ id, titulo, descricao }: NoteProps) => {
+const Note = ({ id, title, description }: NoteProps) => {
   const [showModal, setShowModal] = useState(false);
 
   const note = {
     id,
-    titulo,
-    descricao,
+    title,
+    description,
   };
 
   const handleDelete = () => {
@@ -29,8 +29,8 @@ const Note = ({ id, titulo, descricao }: NoteProps) => {
       {showModal && <Modal modalChange={handleDelete} />}
       <div className="container-nota">
         <div className="dados-nota">
-          <h2>{titulo}</h2>
-          <p>{descricao}</p>
+          <h2>{title}</h2>
+          <p>{description}</p>
         </div>
 
         <div className="container-botoes">
