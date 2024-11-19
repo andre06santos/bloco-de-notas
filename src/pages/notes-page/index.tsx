@@ -17,8 +17,8 @@ const NotesPage = () => {
         <Note
           key={note.id}
           id={note.id}
-          titulo={note.title}
-          descricao={note.description}
+          title={note.title}
+          description={note.description}
         />
       ))}
     </div>
